@@ -1,0 +1,11 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.16.6.65:8761/eureka/
+server:
+  port: 8763
+spring:
+  application:
+    #    此处名称最好写项目名称，便于识别服务提供者
+    name: eureka-client-01
