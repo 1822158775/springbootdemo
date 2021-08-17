@@ -1,6 +1,7 @@
 package com.example.servicefeign;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableHystrixDashboard
+@MapperScan(value = "com.example.servicefeign.mapper")
 public class ServiceFeignApplication {
 
     public static void main(String[] args) {

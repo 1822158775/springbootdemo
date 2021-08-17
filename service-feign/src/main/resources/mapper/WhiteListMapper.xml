@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.servicefeign.mapper.IWhiteListMapper">
+    <resultMap id="whiteLists" type="com.example.servicefeign.pojo.WhiteList">
+    </resultMap>
+    <select id="queryAll" resultMap="whiteLists" parameterType="com.example.servicefeign.pojo.WhiteList">
+        select * from `ip_white_list`
+    </select>
+    <select id="findIPWhiteList" resultMap="whiteLists" parameterType="com.example.servicefeign.pojo.WhiteList">
+        select * from `ip_white_list` where white_list = #{whiteList}
+    </select>
+</mapper>

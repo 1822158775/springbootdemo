@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.servicefeign.mapper.IUserMapper">
+    <resultMap id="users" type="com.example.servicefeign.pojo.User">
+    </resultMap>
+    <select id="queryAll" resultMap="users" parameterType="com.example.servicefeign.pojo.User">
+        select * from `user`
+    </select>
+    <update id="updateUser" parameterType="com.example.servicefeign.pojo.User">
+        update `user` set `company_token` = #{companyToken} where id = #{id}
+    </update>
+    <select id="findCompany" resultMap="users" parameterType="com.example.servicefeign.pojo.User">
+        select * from `user` where `token` = #{token} and unlock_key = #{unlockKey}
+    </select>
+</mapper>

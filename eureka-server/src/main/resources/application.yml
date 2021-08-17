@@ -1,19 +1,19 @@
 
 server:
-  port: 8761 #指定该Eureka实例的端口
+  port: 8761 #指锟斤拷锟斤拷Eureka实锟斤拷锟侥端匡拷
 
 eureka:
   instance:
-    hostname: localhost #设置当前实例的主机名称
+    hostname: localhost #锟斤拷锟矫碉拷前实锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
   client:
-    registerWithEureka: false #禁止注册自身
-    fetchRegistry: false  #因为该服务没有注册到其他注册中心，所以关闭从注册中心拉取服务列表。
-    serviceUrl:  #服务注册中心地址
+    registerWithEureka: false #锟斤拷止注锟斤拷锟斤拷锟斤拷
+    fetchRegistry: false  #锟斤拷为锟矫凤拷锟斤拷没锟斤拷注锟结到锟斤拷锟斤拷注锟斤拷锟斤拷锟侥ｏ拷锟斤拷锟皆关闭达拷注锟斤拷锟斤拷锟斤拷锟斤拷取锟斤拷锟斤拷锟叫憋拷
+    serviceUrl:  #锟斤拷锟斤拷注锟斤拷锟斤拷锟侥碉拷址
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 
 
 
-#eureka是一个高可用的组件，它没有后端缓存，每一个实例注册之后需要向注册中心发送心跳（因此可以在内存中完成）
-#通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.
+#eureka锟斤拷一锟斤拷锟竭匡拷锟矫碉拷锟斤拷锟斤拷锟斤拷锟矫伙拷泻锟剿伙拷锟芥，每一锟斤拷实锟斤拷注锟斤拷之锟斤拷锟斤拷要锟斤拷注锟斤拷锟斤拷锟侥凤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷丝锟斤拷锟斤拷锟斤拷诖锟斤拷锟斤拷锟缴ｏ拷
+#通锟斤拷eureka.client.registerWithEureka锟斤拷false锟斤拷fetchRegistry锟斤拷false锟斤拷锟斤拷锟斤拷锟皆硷拷锟斤拷一锟斤拷eureka server.
 #

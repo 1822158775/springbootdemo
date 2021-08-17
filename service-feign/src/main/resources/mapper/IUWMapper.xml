@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.servicefeign.mapper.IUMapper">
+    <resultMap id="uws" type="com.example.servicefeign.pojo.UW">
+    </resultMap>
+    <select id="findCompanyToken" resultMap="uws" parameterType="com.example.servicefeign.pojo.UW">
+        select * from `u_w` where user_company_token = #{userCompanyToken}
+    </select>
+    <insert id="insertCompanyToken" parameterType="com.example.servicefeign.pojo.UW">
+        INSERT INTO `u_w`(`user_company_token`,`white_list`) VALUES(#{userCompanyToken},#{whiteList})
+    </insert>
+</mapper>
